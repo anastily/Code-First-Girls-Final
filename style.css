@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Nunito+Sans&display=swap');
+
+
+body {
+  font-family: Nunito Sans;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: white;
+  color: #000000;
+  margin: 80px auto 48px auto;
+  width: 1120px;
+}
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  h1,
+  nav,
+  footer {
+    font-family: 'Josefin Sans';
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+    margin: 0 0 0 32px;
+    transition: color 0.3s, border-bottom 0.3s;
+    border-bottom: 2px solid #transparent;
+  }
+  
+  a:hover, a.selected {
+    color: #E565E8;
+    border-bottom: 2px solid #E565E8;
+  
+  }
+
+  section {
+    margin: 80px 0 80px 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px 32px;
+    grid-auto-flow: dense;
+  }
+section.map {
+grid-auto-columns: max-content ;
+
+}
+  section.contact div.form {
+    grid-column: 4 / span 6;
+  }
+  
+  section.contact h1 {
+    text-align: left;
+
+    section.contact div.form {
+        grid-column: 1 / span 4;
+      }
+  }
+
+  input, textarea {
+    width: 100% ; 
+    background-color: rgb(255, 255, 255) ;
+     border: 2px solid #BAFE62;
+     color: #000000;
+     padding: 8px 16px 8px 16px;
+   }
+   
+   label {
+     display: block;
+     margin: 16px 0 16px 0;
+   }
+   
+   textarea {
+    height: 320px;
+  }
+
+  button {
+    background-color: #BAFE62;
+    border: none;
+    border-radius: 25px;
+    font-size: 24px;
+    font-family: "Josefin Sans";
+    padding: 8px 16px 8px 16px;
+  }
+
+  input:focus, textarea:focus {
+    border: 2px solid #E565E8;
+    outline: none;
+  }
+
+
+  .blog-area {
+    display: flex;
+    width: 90%;  
+    justify-content: space-around;
+}
+.profiles {
+    width: 360px;
+    height: 400px;
+    padding: 24px;
+    background: white;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s ease-out;
+    box-shadow: 0 10px 10px rbga(0,0,0,0,5);
+}
+.profiles:hover {
+    transform: translateY(15px);
+}
+.profiles:hover:before {
+    opacity: 1; 
+}
+.profiles:hover .profile-text{
+    opacity: 1;
+    transform: translateY(0);
+}
+.profiles:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width:100%;
+    height:100%;
+    background: linear-gradient(to top, #000, transparent);
+    z-index: 2;
+    transition: 0.5s;
+    opacity: 0;
+}
+.profiles img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+.profiles .profile-text{
+    position: relative;
+    z-index:3;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: 0.5s;
+}
+.profile-text h2{
+    margin: 0;
+    font-family: "Josefin Sans";
+    letter-spacing: 3px;
+}
+.profile-text p{
+    letter-spacing: 1px;
+    font-size: 15px;
+    margin-top: 8px;
+    font-family: "Josefin Sans";
+}
+.profile-text a{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin: 0 5px;
+    text-decoration: none;
+}
+.profile-text a i{
+    color: #fff;
+    padding: 6px 8px;
+}
+
+
+
+
+.content {
+  position: relative;
+  top: 50px;
+  width: 100%;
+  text-align: center;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1.0s;
+  animation-duration: 1.0s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.5s;
+}
+  .splatter {
+    position: absolute;
+    top: 150px;
+    right: 50px;
+    z-index: 799;
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both; 
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s; 
+  }
+  
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  @-webkit-keyframes zoomIn {
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d(.3, .3, .3);
+              transform: scale3d(.3, .3, .3);
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes zoomIn {
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d(.3, .3, .3);
+              transform: scale3d(.3, .3, .3);
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  .zoomIn {
+    -webkit-animation-name: zoomIn;
+            animation-name: zoomIn;
+  }
+
+
+  .splatter2 {
+    position: absolute;
+    top: 690px;
+    left: 50px;
+    z-index: 799;
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both; 
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s; 
+  }
+  
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  @-webkit-keyframes zoomIn {
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d(.3, .3, .3);
+              transform: scale3d(.3, .3, .3);
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes zoomIn {
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d(.3, .3, .3);
+              transform: scale3d(.3, .3, .3);
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  .zoomIn {
+    -webkit-animation-name: zoomIn;
+            animation-name: zoomIn;
+  }
+
+
+
+
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  footer a {
+    margin: 0 16px 0 16px;
+  }
+
+ 
+
+
+@media (max-width: 1248px){
+  body {
+   width: auto ;
+    margin: 80px 64px 48px 64px;
+  }
+    h1, nav, footer {
+      font-size: 24px;
+  }
+}
+
+@media (max-width: 920px) {
+  header {
+    flex-direction: column;
+  }
+  nav {
+    margin: 24px 0 0 0;
+  }
+  header img {
+    max-width: 300px;
+  }
+  header a {
+    margin: 0 16px 0 16px;
+  }
+}
+
+@media (max-width: 660px) {
+  nav a {
+    margin: 8px 0 0 0;
+  }
+  
